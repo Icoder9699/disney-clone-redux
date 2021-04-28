@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+html{
+  scroll-behavior: smooth; 
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #000;
+  color: #f9f9f9;
+  font-family: Avenir-Roman, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+/* responsivity */
+
+@media only screen and (min-width: 768px) {
+  body{
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  body{
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 478) {
+  body{
+    font-size: 14px;
+  }
+}
+
+
