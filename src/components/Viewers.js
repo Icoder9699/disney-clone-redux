@@ -57,13 +57,14 @@ const Container = styled.div`
 
 const Wrap = styled.div`
     cursor: pointer;
-    border: 3px solid rgba(0,0,0, .3);
+    border: 4px solid rgba(0,0,0, .3);
     width: 100%;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px 0 10px 0;
     background: rgba(0, 0, 0, .5);
     position: relative;
     padding-top: 56%;
+
     img{
         position: absolute;
         width: 100%;
@@ -74,6 +75,7 @@ const Wrap = styled.div`
         z-index: 1;
     }
     video{
+        border-radius: 10px 0 10px 0;
         position: absolute;
         top: 0;
         z-index: 0;
@@ -81,10 +83,13 @@ const Wrap = styled.div`
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 5px;
         opacity: 0.1;
     }
     &:hover{
+        border-color: #fff;
+        box-shadow: 0 0 5px 2px #fff;
+        transform: scale(1.05);
+        transition: all .3s ease-in;
         video{
             opacity: 1;
         }

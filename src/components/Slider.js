@@ -30,8 +30,9 @@ const ImgSlider = props => {
     )
 }
 
-const Carousel = styled(Slider)`
+const Carousel = styled(Slider)`    
     margin-bottom: 20px;
+    overflow: hidden;
     .slick-list {
         overflow: initial;
       }
@@ -63,10 +64,9 @@ const Carousel = styled(Slider)`
 
 const Wrap = styled.div`
     border-radius: 5px;
-    border: 3px solid #000;
-    box-shadow: 0 0 5px #fff;
+    border: 5px solid rgba(0, 0, 0, .1 );
     &:hover{
-        border: 3px solid #ccc;
+        border: 5px solid #fff;
     }
     img{
         border-radius: 5px;

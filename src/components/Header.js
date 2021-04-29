@@ -65,7 +65,7 @@ const Header = props => {
             { userName ? 
                 <>
                     <NavMenu>
-                        <Link to="#" href="/home">
+                        <Link to="/home">
                             <img src="/images/header/home-icon.svg" alt="HOME" />
                             <span>HOME</span>
                         </Link>
