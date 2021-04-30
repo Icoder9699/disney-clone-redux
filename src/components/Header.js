@@ -20,7 +20,7 @@ const Header = props => {
     const userPhoto = useSelector(selectUserPhoto);
     const history   = useHistory();
 
-    const [menu, setMenu] = useState(false)
+    const [menu, setMenu] = useState(true)
 
 
     // if authenticated == true 
@@ -31,6 +31,9 @@ const Header = props => {
                 history.push('/home')
             }
         }) // eslint-disable-next-line
+        if(window.screen.width <= 768){
+            setMenu(false)
+        }
     }, [userName]) 
 
     const authHandler = () =>{
