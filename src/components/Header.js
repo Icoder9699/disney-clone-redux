@@ -60,7 +60,9 @@ const Header = props => {
     }
 
     const toggleMenuHandler = () => {
-        setMenu(!menu);
+        if(window.screen.width <= 768){
+            setMenu(!menu);
+        }
     }
 
     return(
