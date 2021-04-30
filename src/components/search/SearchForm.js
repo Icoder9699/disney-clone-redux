@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components"
 import { AlertContext } from "../../context/alert/AlertContext";
 import Alert from "../Alert";
@@ -19,8 +19,8 @@ const SearchForm = props =>{
     let moviesDB = [];
 
     const searchFrFirebase = (value) => {
-        db.collection('movies').onSnapshot(snapshot => {
-            snapshot.docs.map(doc => {
+        db.collection('movies').onSnapshot(snapshot => {// eslint-disable-next-line
+            snapshot.docs.map(doc => { 
                 const movieFrDB = doc.data().title.toLowerCase()
                 if(movieFrDB.indexOf(value) > -1){
                     moviesDB = [...moviesDB, {id: doc.id, ...doc.data()}]
@@ -33,7 +33,6 @@ const SearchForm = props =>{
     }
 
     const submitHandler = e => {
-        console.log('hello');
         e.preventDefault()
         moviesDB = [];
         if(!value){
@@ -69,7 +68,7 @@ const SearchForm = props =>{
 
 export default SearchForm;
 
-const Form = styled.div`
+const Form = styled.form`
     display: flex;
     justify-content: center;
     margin: 20px auto;

@@ -1,8 +1,7 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { 
-    selectUserEmail, 
     selectUserName, 
     selectUserPhoto, 
     setSignOutState, 
@@ -21,6 +20,8 @@ const Header = props => {
     const userPhoto = useSelector(selectUserPhoto);
     const history   = useHistory();
 
+    const [menu, setMenu] = useState(false)
+
 
     // if authenticated == true 
     useEffect(() => {
@@ -29,7 +30,7 @@ const Header = props => {
                 setUser(user);
                 history.push('/home')
             }
-        })
+        }) // eslint-disable-next-line
     }, [userName]) 
 
     const authHandler = () =>{
@@ -55,20 +56,27 @@ const Header = props => {
         }))
     }
 
-    return(
-        <Nav>
-            <NavLogo>
-                <img src='/images/header/logo.svg' alt='logo'/>
-            </NavLogo>
+    const toggleMenuHandler = () => {
+        setMenu(!menu);
+    }
 
+    return(
+
+        <React.Fragment>
+            <MenuIcon onClick={toggleMenuHandler}>Menu</MenuIcon>
+            { menu ? 
+            <Nav>
+                <NavLogo>
+                    <img src='/images/header/logo.svg' alt='logo'/>
+                </NavLogo>
             { userName ? 
                 <>
                     <NavMenu>
-                        <Link to="/home">
+                        <Link to="/home" onClick={toggleMenuHandler}>
                             <img src="/images/header/home-icon.svg" alt="HOME" />
                             <span>HOME</span>
                         </Link>
-                        <Link to="/search">
+                        <Link to="/search" onClick={toggleMenuHandler}>
                             <img src="/images/header/search-icon.svg" alt="SEARCH" />
                             <span>SEARCH</span>
                         </Link>
@@ -102,7 +110,12 @@ const Header = props => {
                 </SignIn>
             }
 
-        </Nav>
+            </Nav> :
+                null
+            }
+
+        </React.Fragment>
+        
     )
 }
 
@@ -119,6 +132,11 @@ const Nav = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media(max-width: 768px){
+        flex-direction: column;
+        height: 100vh;
+        width: 80%;
+    }
 `;
 
 const NavLogo = styled.a`
@@ -130,6 +148,9 @@ const NavLogo = styled.a`
     img {
         object-fit: contain;
         width: 100%;
+    }
+    @media(max-width: 768px){
+        display: none;
     }
 `;
 
@@ -168,6 +189,16 @@ const NavMenu = styled.nav`
             }
         }
     }
+    @media(max-width: 768px){
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        margin: 0;
+        a{
+            padding-top: 25px;
+            width: 100%;
+        }
+    }
 `;
 
 const SignIn = styled.button`
@@ -184,6 +215,9 @@ const SignIn = styled.button`
         background-color: #fff;
         border: 1px solid #000;
         color: #000;
+    }
+    @media(max-width: 768px){
+        margin-top: 20px;
     }
 `;
 
@@ -225,6 +259,28 @@ const SignOut  = styled.div`
         ${DropDown}{
             opacity: 1;
         }
+    }
+    @media(max-width: 768px){
+        position: absolute;
+        top: 20px;
+        right: 0;
+    }
+`;
+
+const MenuIcon = styled.button`
+    position: fixed;
+    top: 10px;
+    right: 5px;
+    font-size: 40px;
+    width: 60px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    height: 30px;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+    @media(max-width: 768px){
+        display: block;
     }
 `;
 
