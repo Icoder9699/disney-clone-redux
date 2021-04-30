@@ -67,11 +67,11 @@ const Container = styled.div`
 
 const Background = styled.div`
   position: absolute;
-  top: 0;
+  top: 71px;
   left: 0;
   opacity: 0.8;
   z-index: -1;
-  height: 100vh;
+  height: 100%;;
   img{
     width: 100%;
     height: 100%;

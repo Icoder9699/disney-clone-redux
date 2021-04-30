@@ -18,7 +18,6 @@ const Header = props => {
     const dispatch  = useDispatch(); // to use redux functional
     // mapstatetoprops .... got selectors 
     const userName  = useSelector(selectUserName);
-    const userEmail = useSelector(selectUserEmail);
     const userPhoto = useSelector(selectUserPhoto);
     const history   = useHistory();
 
@@ -31,7 +30,7 @@ const Header = props => {
                 history.push('/home')
             }
         })
-    }, [userName])
+    }, [userName]) 
 
     const authHandler = () =>{
         auth.signInWithPopup(provider)
@@ -69,7 +68,7 @@ const Header = props => {
                             <img src="/images/header/home-icon.svg" alt="HOME" />
                             <span>HOME</span>
                         </Link>
-                        <Link to="#">
+                        <Link to="/search">
                             <img src="/images/header/search-icon.svg" alt="SEARCH" />
                             <span>SEARCH</span>
                         </Link>

@@ -4,18 +4,23 @@ import Login from './pages/Login';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Detail from './pages/Detail';
+import Search from './pages/Search';
+import AlertProvider from './context/alert/AlertContext';
 
 function App() {
   return (
     <div className="App">
-        <Router>
-          <Header />
-          <Switch>
-            <Route path='/home' component={Home} />
-            <Route path='/detail/:id' component={Detail} />
-            <Route path='/' component={Login} exact />
-          </Switch>
-        </Router>
+        <AlertProvider>
+          <Router>
+            <Header />
+            <Switch>
+              <Route path='/' component={Login} exact />
+              <Route path='/home' component={Home} />
+              <Route path='/detail/:id' component={Detail} />
+              <Route path='/search' component={Search} />
+            </Switch>
+          </Router>
+        </AlertProvider>
     </div>
   );
 }
