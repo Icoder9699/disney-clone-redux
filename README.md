@@ -1,3 +1,7 @@
+disney clone by tutorial and I worked with 
+React Hooks, context, redux, redux-toolkit, firebase store, firebase-auth by email. react-styled components
+demo : https://disneyplus-clone-redux.web.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
