@@ -1,7 +1,16 @@
 <h4>Disney clone by tutorial. </h4>
-<br/>In this project I used : <br/>
-  <li>React Hooks</li> context, redux, redux-toolkit, firebase store, firebase-auth by email, react-router, react-styled components, git.</i><br/>
-demo : https://disneyplus-clone-redux.web.app/
+In this project I practised with : <br/>
+  <li>React Hooks</li> 
+  <li>Context</li> 
+  <li>redux</li>
+  <li>redux-toolkit,<li/> 
+  <li>firebase store,</li>
+  <li>firebase-auth by email,</li>
+  <li>react-router-dom, </li>
+  <li>styled-components, </li>
+  <li>git.</li>
+  <br/>
+  demo : https://disneyplus-clone-redux.web.app/
 
 # Getting Started with Create React App
 
