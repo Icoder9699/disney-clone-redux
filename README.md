@@ -1,6 +1,7 @@
 <h4>Disney clone by tutorial. </h4>
 <h5>In this project I practised with:</h5>
 <ul>
+    <li>ReactJS</li> 
     <li>React Hooks</li> 
     <li>Context</li> 
     <li>redux</li>
