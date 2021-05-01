@@ -29,6 +29,8 @@ const Header = props => {
             if(user){
                 setUser(user);
                 history.push('/home')
+            }else{
+
             }
         }) // eslint-disable-next-line
         if(window.screen.width <= 768){
@@ -48,6 +50,7 @@ const Header = props => {
 
     const logoutHandler = () => {
         auth.signOut()
+        history.push('/')
         dispatch(setSignOutState())
     }
 
@@ -274,6 +277,7 @@ const SignOut  = styled.div`
 
 const MenuIcon = styled.button`
     position: fixed;
+    z-index: 1;
     top: 10px;
     right: 5px;
     font-size: 40px;
